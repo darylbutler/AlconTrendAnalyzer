@@ -20,13 +20,18 @@ $(".tTag").click(function(e) {
 
 function createChart() {
     var ctx = document.getElementById("myChart").getContext('2d');
+    var data = getData();
+
+    if (data.length < 2) return;
+
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: data[0],
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: data.slice(1),
+                /*
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -42,18 +47,38 @@ function createChart() {
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
                     'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 2
+                ], */
+                borderWidth: 1
             }]
         },
         options: {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: false
+                        //beginAtZero: true
                     }
                 }]
             }
         }
     });
+}
+
+function getData() {
+    var sqlite3 = require('sqlite3').verbose();
+    var db = new sqlite3.Database('data.db');
+
+    var result;
+
+    db.serialize(function() {
+        
+        var sql = "SELECT `time`,`tag_2` FROM `data` WHERE `time` < 1178763400;";
+        
+        db.all(sql, function(err, rows) {
+            console.log(rows.length);
+            result = rows;
+        });
+      });
+       
+      db.close();
+      return result;
 }

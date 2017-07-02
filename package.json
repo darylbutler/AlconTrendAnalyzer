@@ -21,7 +21,9 @@
     "materialize": "^1.0.0"
   },
   "dependencies": {
+    "electron-rebuild": "^1.5.11",
     "jquery": "^3.2.1",
-    "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master"
+    "node-gyp": "^3.6.2",
+    "node-pre-gyp": "^0.6.36"
   }
 }
