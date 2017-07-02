@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <link rel="stylesheet" href="css/materialize.css" media="screen,projection">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="css/material_fonts.css"> -->
+  </head>
+  <body>
+    <div class="">
+      <div class="row">
+          <!-- Left Sidebar -->
+          <div class="col s3 sidebar">
+            
+            <!-- Tags View -->
+            <div class="collection">
+              <a href="#!" class="collection-item tTag">Tag 1</a>
+              <a href="#!" class="collection-item active tTag">Tag 2</a>
+              <a href="#!" class="collection-item tTag">Tag 3</a>
+              <a href="#!" class="collection-item tTag">Tag 4</a>
+            </div>
+
+          </div>
+
+          <!-- Content -->
+          <div class="col s9">
+            <canvas id="myChart" class="hide"></canvas>
+            <div id="temp">
+              <div class="card-panel teal lighten-2 z-depth-2">
+                <h1>Hello World!</h1>
+                <!-- All of the Node.js APIs are available in this renderer process. -->
+                We are using Node.js <script>document.write(process.versions.node)</script>,
+                Chromium <script>document.write(process.versions.chrome)</script>,
+                and Electron <script>document.write(process.versions.electron)</script>.
+              </div>
+            </div>
+          </div>
+      </div>      
+    </div>
+  </body>
+
+  <!-- Includes -->  
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/Chart.bundle.js"></script>
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</html>
