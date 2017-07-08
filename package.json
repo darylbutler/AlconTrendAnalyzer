@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "alcon-trend-analyzer",
+  "version": "0.1.0",
+  "description": "CSV Visualizer for Alcon",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -9,21 +9,16 @@
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "trend",
+    "data"
   ],
-  "author": "GitHub",
+  "author": "Daryl Butler",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "~1.6.2",
     "materialize": "^1.0.0"
   },
   "dependencies": {
-    "electron-rebuild": "^1.5.11",
-    "jquery": "^3.2.1",
-    "node-gyp": "^3.6.2",
-    "node-pre-gyp": "^0.6.36"
+    "jquery": "^3.2.1"
   }
 }
